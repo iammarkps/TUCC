@@ -1,0 +1,35 @@
+{
+  "name": "triamudomcomputerclub",
+  "description": "Website for Triam Udom Computer Club",
+  "version": "1.0.0",
+  "contributors": [
+    {
+      "name": "iammark",
+      "email": "markkung08@gmail.com",
+      "web": "iammark.me"
+    }
+  ],
+  "scripts": {
+    "dev": "next",
+    "start": "next start",
+    "build": "next build",
+    "export": "next export -o dist",
+    "test": "jest",
+    "format": "prettier --write src/**/*.{js,jsx}"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.9",
+    "@sentry/browser": "^4.6.5",
+    "@zeit/next-css": "^1.0.1",
+    "next": "^8.0.3",
+    "normalize.css": "^8.0.1",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-spring": "^8.0.18"
+  },
+  "devDependencies": {
+    "@emotion/babel-preset-css-prop": "^10.0.9",
+    "@fortawesome/fontawesome-free": "^5.8.1",
+    "prettier": "^1.16.4"
+  }
+}
