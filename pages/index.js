@@ -4,6 +4,8 @@ import { Title } from '../components/Title'
 import { Layout } from '../components/Layout'
 import { NavBar } from '../components/NavBar'
 import { Projects } from '../components/Projects'
+import { About } from '../components/About'
+import { Footer } from '../components/Footer'
 
 import { Responsive } from '../design'
 
@@ -24,5 +26,7 @@ export default () => (
     </Responsive>
     <Title />
     <Projects />
+    <About />
+    <Footer />
   </Layout>
 )

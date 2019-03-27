@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Global } from '@emotion/core'
 
 export const DESKTOP_MIN_WIDTH = 960
-export const BASE_FONT_SIZE = '14px'
+export const BASE_FONT_SIZE = '16px'
+export const BASE_FONT_SIZE_SM = '14px'
 
 export const Colors = {
   triamPink: '#F06292'
@@ -34,7 +35,7 @@ export function getSystemFonts() {
 
 export const Fonts = {
   display: ['proxima-nova', 'Kanit', ...getSystemFonts()].join(', '),
-  body: getSystemFonts().join(', ')
+  body: ['Kanit', ...getSystemFonts()].join(', ')
 }
 
 /**
@@ -63,21 +64,20 @@ export const GlobalStyle = () => (
         background: '#fff',
         fontFamily: Fonts.body,
         color: '#212121',
-        fontSize: BASE_FONT_SIZE,
+        fontSize: BASE_FONT_SIZE_SM,
         lineHeight: '1.5'
       },
       a: {
-        color: '#000',
+        color: '#fff',
         marginRight: '20px',
-        textDecoration: 'none',
-        transition: 'border .2s ease',
-
-        '&:hover': {
-          borderBottom: '2px solid #000'
-        }
+        textDecoration: 'none'
       },
       h1: {
         fontFamily: Fonts.display
+      },
+
+      [media(DESKTOP_MIN_WIDTH, 'min')]: {
+        body: { fontSize: BASE_FONT_SIZE }
       }
     }}
   />
