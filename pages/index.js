@@ -7,7 +7,7 @@ import { Projects } from '../components/Projects'
 import { About } from '../components/About'
 import { Footer } from '../components/Footer'
 
-import { Responsive } from '../design'
+import { DesktopOnly } from '../components/Responsive'
 
 const menu = [
   { text: 'Home', href: '/' },
@@ -15,15 +15,13 @@ const menu = [
   { text: 'About', href: '/' }
 ]
 
+const more = [{ text: 'Github', href: '/' }]
+
 export default () => (
   <Layout>
-    <Responsive>
-      <NavBar
-        title="TRIAM UDOM"
-        menu={menu}
-        more={[{ text: 'Github', href: '/' }]}
-      />
-    </Responsive>
+    <DesktopOnly>
+      <NavBar title="TRIAM UDOM" menu={menu} more={more} />
+    </DesktopOnly>
     <Title />
     <Projects />
     <About />

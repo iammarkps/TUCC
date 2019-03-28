@@ -25,7 +25,7 @@ function linkMapper(list) {
   return list.map(l => {
     const { text, href } = l
     return (
-      <Link href={href}>
+      <Link href={href} key={text}>
         <a
           css={{
             color: '#000',
