@@ -44,13 +44,15 @@ jobs:
           command: docker push $DOCKER_TAG
 
   deploy:
+    machine:
+      enabled: true
     steps:
       - add_ssh_keys:
           fingerprints:
             - 'b0:2a:e9:7f:0d:67:52:1d:a8:af:7f:b7:fe:c8:f2:dd'
       - deploy:
           name: Deploy to production server
-          command: ssh $USER@$SERVER "./deploytucc.sh"
+          command: ssh $USER@$SERVER "sudo ./deploytucc.sh"
 
 workflows:
   version: 2
