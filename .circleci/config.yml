@@ -39,6 +39,27 @@ jobs:
           name: Login to docker
           command: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
 
-      - deploy:
+      - push:
           name: Deploy to docker
           command: docker push $DOCKER_TAG
+
+  deploy:
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - 'b0:2a:e9:7f:0d:67:52:1d:a8:af:7f:b7:fe:c8:f2:dd'
+      - deploy:
+          name: Deploy to production server
+          command: ssh $USER@$SERVER "./deploytucc.sh"
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
