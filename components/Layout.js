@@ -4,6 +4,16 @@ import 'normalize.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 
 import { GlobalStyle } from '../design'
+import { NavBar } from './NavBar'
+import { DesktopOnly } from './Responsive'
+
+const menu = [
+  { text: 'Home', href: '/' },
+  { text: 'Project', href: '/' },
+  { text: 'About', href: '/' }
+]
+
+const more = [{ text: 'Github', href: '/' }]
 
 /**
  *
@@ -23,6 +33,9 @@ export const Layout = props => {
         />
       </Head>
       <GlobalStyle />
+      <DesktopOnly>
+        <NavBar title="TRIAM UDOM" menu={menu} more={more} />
+      </DesktopOnly>
       {children}
     </React.Fragment>
   )

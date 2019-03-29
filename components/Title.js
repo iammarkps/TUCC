@@ -16,6 +16,14 @@ const titleStyle = {
   }
 }
 
+const subtitleStyle = {
+  fontSize: fontSize(0),
+
+  [media(DESKTOP_MIN_WIDTH, 'min')]: {
+    fontSize: fontSize(7)
+  }
+}
+
 const triamPink = { color: Colors.triamPink }
 
 export const Title = () => {
@@ -29,17 +37,7 @@ export const Title = () => {
           </span>
         </div>
         <div>COMPUTER CLUB</div>
-        <div
-          css={{
-            fontSize: fontSize(0),
-
-            [media(DESKTOP_MIN_WIDTH, 'min')]: {
-              fontSize: fontSize(7)
-            }
-          }}
-        >
-          ชมรมคอมพิวเตอร์ โรงเรียนเตรียมอุดมศึกษา
-        </div>
+        <div css={subtitleStyle}>ชมรมคอมพิวเตอร์ โรงเรียนเตรียมอุดมศึกษา</div>
       </div>
     </div>
   )

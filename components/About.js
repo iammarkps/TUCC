@@ -7,7 +7,7 @@ import { Paragraph } from './Paragraph'
 const containerStyle = {
   display: 'flex',
   justifyContent: 'center',
-  alignItems: 'center',
+  alignItems: 'baseline',
   alignContent: 'center',
   flexDirection: 'column',
   marginTop: '20px',
@@ -21,7 +21,11 @@ export const About = () => {
   return (
     <Section title="About" THTitle="เกี่ยวกับชมรมคอมพิวเตอร์">
       <div css={containerStyle}>
-        <Paragraph title="คอมพิวเตอร์ทั่วไป" icon={<i class="fas fa-laptop" />}>
+        <Paragraph
+          icon={<i className="fas fa-laptop" />}
+          title="คอมพิวเตอร์ทั่วไป"
+          THTitle
+        >
           สำหรับนักเรียนที่มีความสนใจในการทำงานของคอมพิวเตอร์ ระบบเครือข่าย
           การเขียนโปรแกรมทั่วไป การทำงานของระบบสมัยใหม่ เช่น Blockchain, Machine
           Learning ภาษาเขียนโปรแกรมต่าง ๆ รวมถึงการพัฒนาเว็บแอพพลิเคชั่น
@@ -35,7 +39,7 @@ export const About = () => {
           }}
         />
         <Paragraph
-          icon={<i class="fas fa-graduation-cap" />}
+          icon={<i className="fas fa-graduation-cap" />}
           title="คอมพิวเตอร์โอลิมปิค"
           THTitle
         >
