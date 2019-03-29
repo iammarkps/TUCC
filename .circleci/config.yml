@@ -39,7 +39,7 @@ jobs:
           name: Login to docker
           command: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
 
-      - push:
+      - run:
           name: Deploy to docker
           command: docker push $DOCKER_TAG
 
