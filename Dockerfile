@@ -1,5 +1,6 @@
 FROM mhart/alpine-node:latest AS build
 RUN apk add --no-cache make gcc g++ python
+RUN apk add git
 WORKDIR /app
 COPY . .
 RUN yarn && yarn build
