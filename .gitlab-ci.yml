@@ -11,10 +11,12 @@ build-image:
   stage: build
   script:
     - docker build -t iammark08/tucc .
-  only: master
+  only:
+    - master
 
 push-image:
   stage: push
   script:
     - docker push iammark08/tucc
-  only: master
+  only:
+    - master
