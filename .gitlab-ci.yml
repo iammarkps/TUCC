@@ -1,0 +1,20 @@
+image: docker:stable
+
+stage:
+  - build
+  - push
+
+before_script:
+  - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+
+build-image:
+  stage: build
+  script:
+    - docker build -t iammark08/tucc .
+  only: master
+
+push-image:
+  stage: push
+  script:
+    - docker push iammark08/tucc
+  only: master
