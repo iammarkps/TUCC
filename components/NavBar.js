@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import Link from 'next/link'
+import React from 'react'
 
 import { Fonts, fontSize } from '../design'
 
@@ -22,25 +21,35 @@ const nav = {
  * @param {string} list[].text
  */
 function linkMapper(list) {
+  function scrollToElement(el) {
+    if (el === 'title') {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    } else {
+      document
+        .getElementById(`${el}`)
+        .scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
+  }
+
   return list.map(l => {
     const { text, href } = l
     return (
-      <Link href={href} key={text}>
-        <a
-          css={{
-            color: '#000',
-            marginRight: '20px',
-            textDecoration: 'none',
-            transition: 'border .2s ease',
+      <a
+        css={{
+          color: '#000',
+          marginRight: '20px',
+          textDecoration: 'none',
+          transition: 'border .2s ease',
 
-            '&:hover': {
-              borderBottom: '2px solid #000'
-            }
-          }}
-        >
-          {text}
-        </a>
-      </Link>
+          '&:hover': {
+            borderBottom: '2px solid #000'
+          }
+        }}
+        onClick={() => scrollToElement(href)}
+        href="javascript:void(0);"
+      >
+        {text}
+      </a>
     )
   })
 }
@@ -84,7 +93,23 @@ export class NavBar extends React.Component {
         <div css={nav}>
           <div css={{ flex: 1 }}>{title}</div>
           <div css={{ flex: 1 }}>{linkMapper(menu)}</div>
-          <div css={{ flex: 1 }}>{linkMapper(more)}</div>
+          <div css={{ flex: 1 }}>
+            <a
+              css={{
+                color: '#000',
+                marginRight: '20px',
+                textDecoration: 'none',
+                transition: 'border .2s ease',
+
+                '&:hover': {
+                  borderBottom: '2px solid #000'
+                }
+              }}
+              href="javascript:void(0);"
+            >
+              GitHub
+            </a>
+          </div>
         </div>
       </header>
     )

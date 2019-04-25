@@ -8,9 +8,9 @@ import { NavBar } from './NavBar'
 import { DesktopOnly } from './Responsive'
 
 const menu = [
-  { text: 'Home', href: '/' },
-  { text: 'Project', href: '/' },
-  { text: 'About', href: '/' }
+  { text: 'Home', href: 'title' },
+  { text: 'Project', href: 'projects' },
+  { text: 'About', href: 'about' }
 ]
 
 const more = [{ text: 'Github', href: '/' }]

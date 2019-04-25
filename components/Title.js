@@ -28,7 +28,7 @@ const triamPink = { color: Colors.triamPink }
 
 export const Title = () => {
   return (
-    <div css={titleStyle}>
+    <div css={titleStyle} id="title">
       <div>
         <div>
           <span>
