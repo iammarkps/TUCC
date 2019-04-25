@@ -1,6 +1,5 @@
 import React from 'react'
 import App, { Container } from 'next/app'
-import { Progress } from '../components/Progress'
 import * as Sentry from '@sentry/browser'
 
 Sentry.init({
@@ -33,7 +32,6 @@ class MyApp extends App {
     return (
       <Container>
         <Component {...pageProps} />
-        <Progress />
       </Container>
     )
   }
