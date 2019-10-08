@@ -1,5 +1,6 @@
 import React from 'react'
 import App, { Container } from 'next/app'
+import smoothscroll from 'smoothscroll-polyfill'
 import * as Sentry from '@sentry/browser'
 
 Sentry.init({
@@ -15,6 +16,10 @@ class MyApp extends App {
     }
 
     return { pageProps }
+  }
+
+  componentDidMount() {
+    smoothscroll.polyfill()
   }
 
   componentDidCatch(error, errorInfo) {

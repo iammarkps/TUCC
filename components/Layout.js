@@ -1,5 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
+import { keyframes, css } from '@emotion/core'
 import 'normalize.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 
@@ -9,11 +10,19 @@ import { DesktopOnly } from './Responsive'
 
 const menu = [
   { text: 'Home', href: 'title' },
-  { text: 'Project', href: 'projects' },
-  { text: 'About', href: 'about' }
+  { text: 'About', href: 'about' },
+  { text: 'Project', href: 'projects' }
 ]
 
-const more = [{ text: 'Github', href: '/' }]
+const fadein = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+`
 
 /**
  *
@@ -37,10 +46,16 @@ export const Layout = props => {
         />
       </Head>
       <GlobalStyle />
-      <DesktopOnly>
-        <NavBar title="TRIAM UDOM" menu={menu} more={more} />
-      </DesktopOnly>
-      {children}
+      <div
+        css={css`
+          animation: ${fadein} 3s;
+        `}
+      >
+        <DesktopOnly>
+          <NavBar title="TRIAM UDOM" menu={menu} />
+        </DesktopOnly>
+        {children}
+      </div>
     </React.Fragment>
   )
 }

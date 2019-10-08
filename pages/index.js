@@ -9,8 +9,8 @@ import { Footer } from '../components/Footer'
 export default () => (
   <Layout>
     <Title />
-    <Projects />
     <About />
+    <Projects />
     <Footer />
   </Layout>
 )

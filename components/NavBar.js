@@ -77,7 +77,7 @@ export class NavBar extends React.Component {
   }
 
   render() {
-    const { title, menu, more } = this.props
+    const { title, menu } = this.props
     const { top } = this.state
     return (
       <header
